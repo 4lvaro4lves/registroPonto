@@ -2,15 +2,15 @@ import datetime
 import re
 
 def baterPonto(nomeProfessor, senha):
-    ponto = open("registros.txt", "a")
+    ponto = open("registros.csv", "a")
     hora = datetime.datetime.now()
-    hora = 'Dia: '+str(hora.day)+'-'+str(hora.month)+'-'+str(hora.year)+'     Hora:      '+str(hora.hour)+':'+str(hora.minute)+':'+str(hora.second)
-    registro = nomeProfessor+hora+"\n"
+    hora = str(hora.day)+'-'+str(hora.month)+'-'+str(hora.year)+';'+str(hora.hour)+':'+str(hora.minute)+':'+str(hora.second)
+    registro = nomeProfessor+';'+hora+"\n"
     ponto.write(registro)
     ponto.close()
 
 def criarLista():
-    a = open("registros.txt", "r").read()
+    a = open("registros.csv", "r").read()
     b = list(a)
     aux = ''
     aux2 = []
